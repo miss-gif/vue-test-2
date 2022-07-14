@@ -1,19 +1,20 @@
 <template>
-  <h1>{{message}}</h1>
-  <HelloWorld />
+  <h1 @click="increase">
+    {{ count }}
+  </h1>
 </template>
 
 <script>
-
-import HelloWorld from '~/components/HelloWorld';
 export default {
-  components: {
-    HelloWorld
-  },
-  data(){
+  data() {
     return {
-      message: "vue3"
-    }
-  }
-}
+      count: 0,
+    };
+  },
+  methods: {
+    increase() {
+      this.count += 1;
+    },
+  },
+};
 </script>
